@@ -2,7 +2,7 @@
 #X declare -lib pd_spectral_toolkit;
 #X obj 25 334 tabread4~ \$0array;
 #X obj 25 312 receive~ currentsample;
-#X obj 549 551 receive~ currentsample;
+#X obj 551 571 receive~ currentsample;
 #X obj 94 499 dac~;
 #N canvas 308 42 1519 925 soundplay 0;
 #X obj 651 157 soundfiler;
@@ -37,7 +37,7 @@
 #X obj 911 45 inlet;
 #X obj 911 69 openpanel;
 #X obj 107 370 hsl 392 100 0 4.32768e+06 0 0 empty empty empty 0 0
-0 10 -262144 -258113 -262144 30257 1;
+0 10 -262144 -258113 -262144 11499 1;
 #X obj 30 466 r \$0slide;
 #X obj 100 497 outlet;
 #X obj 173 549 outlet;
@@ -120,16 +120,16 @@
 #X text 494 203 ms;
 #X floatatom 36 205 8 0 0 0 - - -;
 #X text 96 204 sample;
-#X msg 498 367 0 10000;
-#X msg 498 243 0 0;
+#X msg 498 397 0 10000;
+#X msg 498 273 0 0;
 #X floatatom 489 635 12 0 0 0 - - -;
 #X obj 94 447 *~;
 #X obj 142 448 *~;
 #X obj 170 533 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7400 1;
+-1 -1 12700 1;
 #X obj 170 669 / 127;
 #X obj 230 533 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7900 1;
+-1 -1 12700 1;
 #X obj 230 669 / 127;
 #X floatatom 230 693 5 0 0 0 - - -;
 #X floatatom 170 693 5 0 0 0 - - -;
@@ -137,33 +137,41 @@
 #X text 232 716 pvoc;
 #X text 54 18 play (in loop);
 #X text 304 19 load another file;
-#X text 441 57 https://freesound.org/people/klankbeeld/sounds/263612/
+#X text 472 97 https://freesound.org/people/klankbeeld/sounds/263612/
 ;
-#X obj 574 132 declare -lib pd_spectral_toolkit;
-#X text 442 80 https://freesound.org/people/juskiddink/sounds/65508/
+#X obj 618 5 declare -lib pd_spectral_toolkit;
+#X text 472 80 https://freesound.org/people/juskiddink/sounds/65508/
 ;
-#X msg 503 523 5 1000;
-#X msg 503 502 0 1000;
-#X text 556 499 gliss to 0 in 1 sec;
-#X text 556 519 gliss to 4th in 1 sec;
-#X text 586 240 jump to present;
-#X text 586 270 goes to 1sec in the past in 4 sec;
-#X msg 498 271 -1000 4000;
-#X msg 498 297 -3000 8000;
-#X text 586 294 goes to 3sec in the past in 8 sec;
-#X msg 499 322 -10000 1000;
-#X text 586 320 goes to 10sec in the past in 1 sec;
-#X text 587 366 goes to present in the past in 10 sec;
-#X obj 435 592 pvoc 1 \$0 \$0array;
+#X msg 523 503 5 1000;
+#X msg 523 482 0 1000;
+#X text 576 479 gliss to 0 in 1 sec;
+#X text 576 499 gliss to 4th in 1 sec;
+#X text 586 270 jump to present;
+#X text 586 300 goes to 1sec in the past in 4 sec;
+#X msg 498 301 -1000 4000;
+#X msg 498 327 -3000 8000;
+#X text 586 324 goes to 3sec in the past in 8 sec;
+#X msg 499 352 -10000 1000;
+#X text 586 350 goes to 10sec in the past in 1 sec;
+#X text 587 396 goes to present in the past in 10 sec;
+#X floatatom 572 605 5 0 0 0 - - -;
+#X text 471 61 testing audio files by:;
+#X text 523 457 PITCH;
+#X text 495 255 TIME;
+#X text 613 609 current pitch dev;
+#X text 583 639 current timepoint dev;
+#X obj 435 592 pvoc \$0array;
+#X text 418 694 adapted from Pd Spectral Toolkit examples \, JH Padovani
+2020-2021;
 #X connect 0 0 14 0;
 #X connect 1 0 0 0;
-#X connect 2 0 41 2;
+#X connect 2 0 47 2;
 #X connect 4 0 9 0;
 #X connect 4 1 7 0;
 #X connect 5 0 4 0;
 #X connect 6 0 4 1;
-#X connect 11 0 41 0;
-#X connect 12 0 41 0;
+#X connect 11 0 47 0;
+#X connect 12 0 47 0;
 #X connect 14 0 3 0;
 #X connect 15 0 3 1;
 #X connect 16 0 17 0;
@@ -172,10 +180,11 @@
 #X connect 18 0 19 0;
 #X connect 19 0 15 1;
 #X connect 19 0 20 0;
-#X connect 29 0 41 1;
-#X connect 30 0 41 1;
-#X connect 35 0 41 0;
-#X connect 36 0 41 0;
-#X connect 38 0 41 0;
-#X connect 41 0 15 0;
-#X connect 41 1 13 0;
+#X connect 29 0 47 1;
+#X connect 30 0 47 1;
+#X connect 35 0 47 0;
+#X connect 36 0 47 0;
+#X connect 38 0 47 0;
+#X connect 47 0 15 0;
+#X connect 47 1 13 0;
+#X connect 47 2 41 0;
