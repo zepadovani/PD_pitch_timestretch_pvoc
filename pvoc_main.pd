@@ -37,7 +37,7 @@
 #X obj 911 45 inlet;
 #X obj 911 69 openpanel;
 #X obj 107 370 hsl 392 100 0 4.32768e+06 0 0 empty empty empty 0 0
-0 10 -262144 -258113 -262144 11499 1;
+0 10 -262144 -258113 -262144 37087 1;
 #X obj 30 466 r \$0slide;
 #X obj 100 497 outlet;
 #X obj 173 549 outlet;
