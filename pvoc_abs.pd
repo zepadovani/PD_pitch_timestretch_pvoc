@@ -1,4 +1,4 @@
-#N canvas 334 30 1437 1033 12;
+#N canvas 334 25 1437 1033 12;
 #X obj 74 763 outlet~;
 #X obj 145 561 r \$0_stretch_factor;
 #X obj 70 591 *~;
@@ -838,7 +838,7 @@ per frame, f 18;
 #X obj 470 312 s \$0_circbuf_size;
 #X floatatom 553 272 5 0 0 0 - - -;
 #X obj 470 259 t b s;
-#X obj 1100 600 loadbang;
+#X obj 1188 414 loadbang;
 #X obj 990 547 list trim;
 #X obj 922 576 s \$0_window_type;
 #X obj 1023 526 s \$0_window_size;
